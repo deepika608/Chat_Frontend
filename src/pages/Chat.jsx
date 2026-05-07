@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { api } from "../api/client";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 
 export default function Chat() {
@@ -14,17 +15,22 @@ export default function Chat() {
   const messagesEndRef = useRef(null);
 
   const navigate = useNavigate()
+  const { logout } = useAuth();
 
-  // ✅ LOGOUT FUNCTION (ADDED)
-  const logout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
+  
   // 🔥 Load sidebar chats
   useEffect(() => {
-    api.chat.getConversations().then(setConversations);
-  }, []);
+  const token = localStorage.getItem("token");
 
+  if (!token) return;
+
+  api.chat.getConversations()
+    .then(setConversations)
+    .catch((err) => {
+      console.log("No conversations:", err.message);
+    });
+
+}, []);
   // 🔥 Auto scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
