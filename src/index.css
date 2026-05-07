@@ -67,13 +67,46 @@ input, textarea {
   overflow: hidden;
 }
 
-.auth-bg {
+/* .auth-bg {
   position: absolute;
   inset: 0;
   background:
     radial-gradient(ellipse 60% 50% at 20% 20%, rgba(124,106,245,0.08) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 80% 80%, rgba(124,106,245,0.05) 0%, transparent 60%);
+} */
+
+.auth-bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,0.7),
+      transparent 55%
+    ),
+
+    linear-gradient(
+      180deg,
+      #f3f1ef 0%,
+      #eef2f2 72%,
+      #d8e6b3 100%
+    );
 }
+
+/* .auth-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  background: var(--bg8);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(124,106,245,0.05);
+  animation: fadeUp 0.4s ease;
+} */
+
 
 .auth-card {
   position: relative;
@@ -81,12 +114,29 @@ input, textarea {
   width: 100%;
   max-width: 420px;
   padding: 40px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(124,106,245,0.05);
+
+  background: rgba(255,255,255,0.45);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.55);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08);
+
   animation: fadeUp 0.4s ease;
 }
+
+
+
+
+
+
+
+
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -115,21 +165,22 @@ input, textarea {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.5px;
-}
 
+  color: #1f2937;
+}
 .auth-title {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.5px;
   margin-bottom: 4px;
-}
 
+  color: #1f2937;
+}
 .auth-subtitle {
-  color: var(--text2);
+  color: #6b7280;
   font-size: 14px;
   margin-bottom: 28px;
 }
-
 .form-group {
   margin-bottom: 16px;
 }
@@ -140,28 +191,36 @@ input, textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: var(--text2);
+
+  color: #6b7280;
+
   margin-bottom: 6px;
 }
-
 .form-input {
   width: 100%;
-  padding: 11px 14px;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  color: var(--text);
+  padding: 12px 14px;
+
+  background: rgba(255,255,255,0.75);
+
+  border: 1px solid rgba(0,0,0,0.08);
+
+  border-radius: 12px;
+
+  color: #111827;
+
   font-size: 14px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
 
+  transition: all 0.2s;
+}
 .form-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 0 4px rgba(56,189,248,0.15);
 }
-
-.form-input::placeholder { color: var(--text3); }
-
+.form-input::placeholder {
+  color: #9ca3af;
+}
 .btn {
   display: inline-flex;
   align-items: center;
@@ -223,16 +282,16 @@ input, textarea {
 .auth-footer {
   text-align: center;
   font-size: 13px;
-  color: var(--text2);
+
+  color: #6b7280;
+
   margin-top: 20px;
 }
-
 .auth-footer a {
-  color: var(--accent2);
+  color: #8b5cf6;
   text-decoration: none;
   font-weight: 600;
 }
-
 .auth-footer a:hover { text-decoration: underline; }
 
 /* Main App Layout */

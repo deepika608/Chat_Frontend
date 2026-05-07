@@ -1,4 +1,4 @@
-const BASE = 'https://latestbackend-1-3n01.onrender.com';
+const BASE = 'https://latestbackend-1-3n01.onrender.com'||'http://localhost:8080';
 
 async function request(path, options = {}) {
   try {
