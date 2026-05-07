@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { api } from "../api/client";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Chat() {
   const [message, setMessage] = useState("");
@@ -11,12 +13,13 @@ export default function Chat() {
 
   const messagesEndRef = useRef(null);
 
+  const navigate = useNavigate()
+
   // ✅ LOGOUT FUNCTION (ADDED)
   const logout = () => {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    navigate("/login");
   };
-
   // 🔥 Load sidebar chats
   useEffect(() => {
     api.chat.getConversations().then(setConversations);
@@ -226,3 +229,4 @@ export default function Chat() {
     </div>
   );
 }
+
