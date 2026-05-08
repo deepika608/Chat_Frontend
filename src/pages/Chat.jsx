@@ -123,7 +123,7 @@ export default function Chat() {
                 padding: "10px",
                 marginBottom: "8px",
                 background:
-                  selectedChat?.id === chat.id ? "#555" : "#343541",
+                  selectedChat?.id === chat.id ? "#555" : "#171615e0",
                 borderRadius: "6px",
                 cursor: "pointer"
               }}
@@ -139,7 +139,7 @@ export default function Chat() {
           style={{
             width: "100%",
             padding: "10px",
-            background: "#ef4444",
+            background: "#44efd2",
             color: "white",
             border: "none",
             borderRadius: "6px"
@@ -155,7 +155,7 @@ export default function Chat() {
         flex: 1,
         display: "flex",
         flexDirection: "column",
-        background: "#343541",
+        background: "#01100f",
         color: "white"
       }}>
 
@@ -184,7 +184,7 @@ export default function Chat() {
               <div
                 style={{
                   background:
-                    msg.role === "user" ? "#2563eb" : "#444654",
+                    msg.role === "user" ? "#25cdeb" : "#444654",
                   padding: "10px 15px",
                   borderRadius: "10px",
                   maxWidth: "60%"
@@ -222,7 +222,7 @@ export default function Chat() {
             onClick={sendMessage}
             style={{
               padding: "10px 20px",
-              background: "#2563eb",
+              background: "#39575a",
               border: "none",
               color: "white",
               borderRadius: "8px"
